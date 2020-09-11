@@ -1,0 +1,53 @@
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 124px;
+  width: 90%;
+
+  & > img {
+    width: 49%;
+    height: auto;
+    margin-bottom: 70px;
+    max-width: 1276px;
+  }
+
+  & > div {
+    width: 49%;
+
+    & > p {
+      font-family: Roboto, sans-serif;
+      font-size: rem(16);
+
+      &:first-of-type, &:nth-of-type(2) {
+        font-weight: 300;
+      }
+    }
+
+    &:nth-of-type(2) > p {
+      font-weight: 300;
+    }
+  }
+}
+
+@include respond-to(smallScreen){
+  main {
+    padding: 10px;
+  }
+
+  .main {
+    flex-direction: column;
+    margin-top: 10px;
+    width: 98%;
+
+    & > div {
+      padding-bottom: 25px;
+      width: 100%;
+    }
+
+    & > img {
+      width: 100%;
+    }
+  }
+}

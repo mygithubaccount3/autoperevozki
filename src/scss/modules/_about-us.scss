@@ -1,0 +1,153 @@
+.about-us {
+  width: 83%;
+  line-height: 1.25;
+  margin: auto;
+
+  & > h2 {
+    font-family: Roboto, sans-serif;
+    font-size: rem(28);
+    font-weight: 500;
+    text-align: center;
+  }
+
+  &__text {
+    @extend .d-inline-flex, .flex-column;
+    width: 50%;
+    font-size: rem(20);
+    padding-top: 71px;
+
+    & > ul {
+      list-style-type: none;
+      padding-left: 65px;
+
+      & > li {
+        margin-bottom: 35px;
+
+        &::before {
+          font-family: FontAwesome;
+          margin-left: -52px;
+          margin-right: 10px;
+          font-size: rem(32);
+          font-weight: 900;
+        }
+
+        &:first-child::before {
+          content: '\f1b9';
+          color: #3f51b5;
+        }
+
+        &:nth-child(2)::before {
+          content: '\f118';
+          color: #2196f3;
+          margin-left: -50px;
+          margin-right: 17px;
+        }
+
+        &:last-child::before {
+          content: '\f2bb';
+          color: #00bcd4;
+        }
+      }
+    }
+
+    & h3 {
+      display: inline-block;
+      font-family: Roboto, sans-serif;
+      font-size: rem(20);
+      font-weight: 300;
+    }
+
+    & p {
+      color: #9e9e9e;
+      font-family: Roboto, sans-serif;
+      font-size: rem(16);
+      font-weight: 300;
+    }
+
+    & > p:nth-of-type(2) {
+      letter-spacing: -0.1px;
+      line-height: 1.2;
+      margin-top: 5px;
+      width: 97%;
+    }
+
+    & > a {
+      @extend .align-self-center, .font-italic, .d-block, .text-center;
+      border: 1px solid #7d7a7c;
+      color: #7d7a7c;
+      font-family: "PT Sans", sans-serif;
+      font-size: rem(20);
+      margin-top: 77px;
+      margin-left: -26px;
+      width: 29.4%;
+      padding-top: 12px;
+      padding-bottom: 11px;
+    }
+  }
+
+  &__tel {
+    font-family: Roboto, sans-serif;
+    font-size: rem(28);
+    width: 330px;
+  }
+
+  &__tel:hover {
+    text-decoration: none;
+  }
+
+  &__img {
+    display: inline-flex;
+    flex-direction: column;
+    width: 49%;
+  }
+
+  &__img > img {
+    width: 100%;
+    height: auto;
+    max-width: 1180px;
+    max-height: 857px;
+  }
+}
+
+@include respond-to(smallScreen){
+  .about-us {
+    text-align: center;
+    width: 98%;
+
+    &__text {
+      padding-top: 10px;
+      width: 100%;
+
+      & > ul {
+        padding-left: 40px;
+        position: relative;
+
+        & > li {
+          &::before {
+            position: absolute;
+            left: 0;
+            margin: 0 !important;
+          }
+
+          &:nth-child(2) {
+            
+          }
+        }
+      }
+
+      & > a {
+        margin-top: 0;
+        width: 35.4%;
+      }
+    }
+
+    &__img {
+      width: 100%;
+    }
+
+    &__tel {
+      font-size: rem(16);
+      width: 188px;
+    }
+  }
+}

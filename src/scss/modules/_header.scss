@@ -1,0 +1,193 @@
+.header {
+  position: relative;
+  background-image: url('/assets/img/renault.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &__navbar {
+    @extend .navbar, .navbar-expand-md, .navbar-light, .w-100, .fixed-top;
+    padding: 22px 96px;
+    background-color: black;
+
+    & .navbar-dark .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    }
+
+    & > .header__link {
+      font-size: rem(20);
+      font-weight: 400;
+
+      &:hover {
+        color: white !important;
+      }
+    }
+
+    &-wrapper {
+      @extend .collapse, .navbar-collapse
+    }
+  }
+
+  &__nav {
+    @extend .navbar-nav;
+    margin-top: -6px;
+    position: relative;
+    width: 97%;
+  }
+
+  &__link {
+    @extend .nav-link;
+    color: white !important;
+    display: inline;
+    font-family: Roboto, sans-serif;
+    font-size: rem(16);
+    font-weight: 300;
+    line-height: 1;
+    padding: 0;
+
+    &:hover {
+      color: rgba(255,255,255,.75) !important;
+    }
+  }
+
+  &__item {
+
+    &:last-child {
+      position: absolute;
+      right: 0;
+    }
+
+    &:first-child > .header__link {
+      
+    }
+  }
+
+  &__phone {
+    color: white;
+    font-family: Roboto, sans-serif;
+    font-size: rem(16);
+    font-weight: 300;
+
+    &:hover {
+      color: rgba(255,255,255,.75);
+      text-decoration: none;
+    }
+  }
+
+  &__content {
+    @extend .d-flex, .flex-column, .align-items-center;
+    background: url('/assets/img/03.png');
+  }
+
+  &__title {
+    @extend .text-center;
+    color: #fefefb;
+    font-family: Roboto, sans-serif;
+    font-size: rem(40);
+    line-height: 1.25;
+    width: 60%;
+  }
+
+  &__contacts {
+    @extend .text-center;
+    background-color: #4285f4;
+    border-radius: 3px;
+    color: #fefdfd;
+    font-family: Roboto, sans-serif;
+    font-size: rem(15);
+    padding: 16px 38px;
+    width: 49%;
+    z-index: 5;
+
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 44%;
+    }
+
+    &:hover {
+      box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+      color: #fefdfd;
+      text-decoration: none;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    &__contacts {
+      display: block;
+      width: 100%;
+
+      &-wrapper {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &:first-child {
+        margin-bottom: 10px;
+      }
+    }
+
+    &__navbar {
+      /* padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 16px; */
+      padding: 16px;
+    }
+
+    &__content {
+      padding-top: 200px;
+      padding-right: 16px;
+      padding-bottom: 230px;
+      padding-left: 16px;
+    }
+
+    &__nav {
+      align-items: center;
+      justify-content: space-around;
+      padding: 0 7px;
+      flex-wrap: wrap;
+      height: 100px;
+    }
+
+    &__item {
+      text-align: left;
+      width: 100%;
+
+      &:last-child {
+        position: static;
+      }
+    }
+
+    &__link {
+      font-size: rem(14);
+    }
+
+    &__title {
+      font-size: rem(22);
+      width: 80%;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    &__nav-wrapper {
+      justify-content: flex-end;
+    }
+
+    &__content {
+      padding-top: 100px;
+      padding-bottom: 153px;
+    }
+  }
+}
+
+@include respond-to(tablet){
+  .header {
+    &__content {
+      padding: 130px 16px 35px;
+    }
+  }
+}

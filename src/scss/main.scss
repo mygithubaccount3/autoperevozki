@@ -1,0 +1,18 @@
+@import "utils/utilities/bootstrap/bootstrap";
+@import "utils/utilities/variables";
+@import "utils/mixins/mixins";
+@import "modules/header";
+@import "modules/main";
+@import "modules/about-us";
+@import "modules/contact";
+@import "modules/footer";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+* {
+  outline: none;
+}
+
+img {
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,.18),0 4px 15px 0 rgba(0,0,0,.15);
+}
