@@ -46,7 +46,7 @@ module.exports = {
       test: /\.(png|jpg|gif|svg)$/,
       loader: 'file-loader',
       options: {
-        name: '../img/[name].[ext]'
+        name: '[name].[ext]'
       }
     }, {
       test: /\.scss$/,
@@ -92,15 +92,15 @@ module.exports = {
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/index.html`, to: '' }
     ]}),
-    new imagemin({
+    /*new imagemin({
       disable: process.env.NODE_ENV !== 'production',
       pngquant: {
         quality: '70-75'
       }
-      /*optipng: {
+      /!*optipng: {
         optimizationLevel: 7
-      }*/
-    }),
+      }*!/
+    }),*/
     new CleanWebpackPlugin('../dist/*', {verbose: true, allowExternal: true}),
     new webpack.ProvidePlugin({
       $: 'jquery',
