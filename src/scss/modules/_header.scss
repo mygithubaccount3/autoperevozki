@@ -1,6 +1,6 @@
 .header {
   position: relative;
-  background-image: url('/assets/img/renault.jpg');
+  background-image: url('/dist/assets/img/renault.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -76,7 +76,7 @@
 
   &__content {
     @extend .d-flex, .flex-column, .align-items-center;
-    background: url('/assets/img/03.png');
+    background: url('/dist/assets/img/03.png');
   }
 
   &__title {
